@@ -251,8 +251,7 @@ footer {
     }
     
     #hero {
-        text-align: center;
-        padding: 4rem 0;
+        height: 50vh;
     }
 
     #hero .container {
@@ -423,4 +422,5 @@ header.header-scrolled #searchIcon:hover {
 
 footer {
     color: #cccccc; /* O rodapé já tinha uma cor clara, mas isso garante */
+
 }
