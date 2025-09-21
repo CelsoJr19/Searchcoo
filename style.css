@@ -267,6 +267,10 @@ footer {
         height: 200px;
         margin-bottom: 2rem;
     }
+
+    .swiper-slide img {
+        object-fit: contain;
+    }
 }
 
 /*---------------------------------*/
@@ -424,3 +428,4 @@ footer {
     color: #cccccc; /* O rodapé já tinha uma cor clara, mas isso garante */
 
 }
+
