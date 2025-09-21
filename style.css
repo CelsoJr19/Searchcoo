@@ -1,0 +1,426 @@
+/*-------------------------------------------------*/
+/* ESTILOS GERAIS - VOCÊ PODE MUDAR AS CORES AQUI  */
+/*-------------------------------------------------*/
+:root {
+    --cor-primaria: hsl(11, 93%, 58%);
+    --cor-secundaria: #000000; /* Cinza escuro - usado em títulos */
+    --cor-fundo: #ffffff;     /* Branco */
+    --cor-fundo-secao: #000000; /* Cinza claro para seções alternadas */
+    --cor-texto: #ffffff;      /* Cinza para textos de parágrafo */
+}
+
+/* Reset básico e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: #ffffff
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--cor-secundaria);
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/*---------------------------------*/
+/* CABEÇALHO E NAVEGAÇÃO           */
+/*---------------------------------*/
+header {
+    background: transparent;
+    padding: 0.01rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Garante que o header ocupe sempre a largura total */
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+/* Novo estado do header quando a página é rolada */
+header.header-scrolled {
+    background-color: var(--cor-secundaria); /* Usa a cor de fundo preta que você definiu */
+    border-bottom: 1px solid #222; /* Adicionamos uma borda sutil */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+/*---------------------------------*/
+/* NAVEGAÇÃO E ÍCONES CORRIGIDOS   */
+/*---------------------------------*/
+
+/* Garante que o container da navegação se estique e centralize seu conteúdo */
+header nav {
+    display: flex;         /* <<< CHAVE 1: Transforma a NAV em flexbox */
+    align-items: center;   /* <<< CHAVE 2: Centraliza a lista UL dentro da NAV */
+    margin-right: 2rem;
+}
+
+/* Estilização da lista de links */
+header nav ul {
+    display: flex; /* Alinha os itens da lista em uma linha */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Espaçamento entre os links */
+header nav ul li {
+    margin-left: 5rem;
+}
+
+/* Estilo dos links de navegação */
+header nav ul li a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/*---------------------------------*/
+/* SEÇÃO PRINCIPAL (CARROSSEL HERO)*/
+/*---------------------------------*/
+#hero {
+    padding: 0; /* Removemos o padding para o carrossel ocupar toda a área */
+    height: 85vh; /* Altura do carrossel (85% da altura da tela) */
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir todo o slide sem distorcer */
+}
+
+/* Estilizando as setas para ficarem mais visíveis e com a sua cor primária */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--cor-primaria) !important; /* Usa a cor laranja que você definiu */
+}
+
+/*---------------------------------*/
+/* DEMAIS SEÇÕES                   */
+/*---------------------------------*/
+#sobre {
+    background: var(--cor-fundo-secao);
+}
+
+/* CORREÇÃO: Garante que o título da seção 'Sobre' seja branco */
+#sobre h2 {
+    color: #FFFFFF;
+}
+
+#sobre h2, #portfolio h2, #contato h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#sobre p {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Grid do Portfólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    background: #fff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.portfolio-item h3 {
+    padding: 1rem;
+}
+
+.portfolio-item p {
+    padding: 0 1rem 1rem;
+}
+
+/* Contato e Rodapé */
+#contato {
+    background: var(--cor-secundaria);
+    color: #fff;
+    text-align: center;
+}
+
+#contato h2, #contato p {
+    color: #fff;
+}
+
+.contact-links {
+    margin-top: 2rem;
+}
+
+.contact-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.contact-links i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/*---------------------------------*/
+/* AJUSTES PARA CELULARES          */
+/*---------------------------------*/
+@media(max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin-top: 1rem;
+    }
+    
+    #hero {
+        text-align: center;
+        padding: 4rem 0;
+    }
+
+    #hero .container {
+        flex-direction: column-reverse;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+}
+
+/*---------------------------------*/
+/* ESTILOS DA NOVA LOGO E ÍCONES   */
+/*---------------------------------*/
+
+/* Estilo para a imagem da logo */
+.logo {
+    /* Ajuste a altura máxima da sua logo como preferir */
+    max-height: 100px; 
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+/* Garante que o link da logo não tenha formatação extra */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Container para os ícones da direita */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espaçamento entre os ícones */
+}
+
+/* Estilo dos ícones */
+.header-icons a {
+    color: var(--cor-secundaria); /* Usa a cor cinza dos títulos */
+    font-size: 1.2rem; /* Tamanho dos ícones */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os ícones */
+.header-icons a:hover {
+    color: var(--cor-primaria); /* Usa a cor de destaque azul */
+}
+
+/*--------------------------------------------------*/
+/* CORREÇÃO FINAL E EXPLÍCITA DE ALINHAMENTO HEADER */
+/*--------------------------------------------------*/
+
+/* Ordena que o container de navegação se centralize verticalmente */
+header nav {
+    align-self: center;
+}
+
+/* Ordena que o container de ícones se centralize verticalmente */
+.header-icons {
+    align-self: center;
+}
+
+/*----------------------------------------------*/
+/* ESTILOS DA BARRA DE PESQUISA INTERATIVA      */
+/*----------------------------------------------*/
+
+/* Container que segura o campo e o ícone */
+.search-container {
+    position: relative; /* Essencial para o posicionamento do ícone */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo do ícone de pesquisa */
+#searchIcon {
+    color: var(--cor-secundaria);
+    font-size: 1.2rem;
+    cursor: pointer; /* Muda o mouse para uma "mãozinha" */
+    transition: color 0.3s ease;
+    margin-right: 0.2rem; /* Espaçamento para os outros ícones */
+}
+
+#searchIcon:hover {
+    color: var(--cor-primaria);
+}
+
+/* Estilo do campo de pesquisa */
+.search-input {
+    width: 0; /* Começa escondido, com largura zero */
+    opacity: 0; /* Começa totalmente transparente */
+    padding: 8px 0;
+    border: none;
+    border-bottom: 2px solid var(--cor-secundaria);
+    background-color: transparent;
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.4s ease-in-out; /* Animação suave */
+}
+
+/* ESTADO ATIVO: Quando o campo de pesquisa deve aparecer */
+.search-container.active .search-input {
+    width: 200px; /* Largura do campo quando visível */
+    opacity: 1; /* Torna o campo opaco */
+    padding: 8px 15px; /* Adiciona espaçamento interno */
+}
+
+/* Classe para esconder o header, deslizando-o para cima */
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/*--------------------------------------------------*/
+/*   LÓGICA DE TROCA DE COR DO HEADER AO ROLAR     */
+/*--------------------------------------------------*/
+
+/* ESTADO PADRÃO (TOPO DA PÁGINA) */
+
+/* Por padrão, os links e ícones são pretos (usando sua variável) */
+header nav ul li a,
+header .header-icons a,
+header #searchIcon {
+    color: var(--cor-secundaria); /* Sua variável para cor preta */
+}
+
+/* Por padrão, a logo clara fica escondida */
+.logo-light {
+    display: none;
+}
+
+
+/* ESTADO ROLADO (QUANDO A CLASSE .header-scrolled É APLICADA) */
+
+/* Quando o header é rolado, a logo escura fica escondida */
+header.header-scrolled .logo-dark {
+    display: none;
+}
+
+/* E a logo clara aparece */
+header.header-scrolled .logo-light {
+    display: block;
+}
+
+/* Quando o header é rolado, os links e ícones ficam brancos */
+header.header-scrolled nav ul li a,
+header.header-scrolled .header-icons a,
+header.header-scrolled #searchIcon {
+    color: #FFFFFF; /* Cor branca */
+}
+
+/* Ajuste para o hover dos links no estado rolado */
+header.header-scrolled nav ul li a:hover,
+header.header-scrolled .header-icons a:hover,
+header.header-scrolled #searchIcon:hover {
+    color: var(--cor-primaria); /* Mantém a cor de destaque laranja */
+}
+
+/* Garante que o texto em seções de fundo escuro fique claro */
+#contato, #contato h2, #contato a {
+    color: #FFFFFF;
+}
+
+footer {
+    color: #cccccc; /* O rodapé já tinha uma cor clara, mas isso garante */
+}
