@@ -3,10 +3,10 @@
 /*-------------------------------------------------*/
 :root {
     --cor-primaria: hsl(11, 93%, 58%);
-    --cor-secundaria: #000000; /* Cinza escuro - usado em títulos */
-    --cor-fundo: #ffffff;     /* Branco */
-    --cor-fundo-secao: #000000; /* Cinza claro para seções alternadas */
-    --cor-texto: #ffffff;      /* Cinza para textos de parágrafo */
+    --cor-secundaria: #000000; 
+    --cor-fundo: #ffffff;
+    --cor-fundo-secao: #000000;
+    --cor-texto: #ffffff;
 }
 
 /* Reset básico e fontes */
@@ -54,8 +54,8 @@ header {
 
 /* Novo estado do header quando a página é rolada */
 header.header-scrolled {
-    background-color: var(--cor-secundaria); /* Usa a cor de fundo preta que você definiu */
-    border-bottom: 1px solid #222; /* Adicionamos uma borda sutil */
+    background-color: var(--cor-secundaria);
+    border-bottom: 1px solid #222; /* borda sutil */
 }
 
 header .container {
@@ -74,10 +74,10 @@ header .logo {
 /* NAVEGAÇÃO E ÍCONES CORRIGIDOS   */
 /*---------------------------------*/
 
-/* Garante que o container da navegação se estique e centralize seu conteúdo */
+/* Garante que o container da navegação se estique e centralize o conteúdo */
 header nav {
-    display: flex;         /* <<< CHAVE 1: Transforma a NAV em flexbox */
-    align-items: center;   /* <<< CHAVE 2: Centraliza a lista UL dentro da NAV */
+    display: flex;         /*CHAVE 1: Transforma a NAV em flexbox */
+    align-items: center;   /*CHAVE 2: Centraliza a lista UL dentro da NAV */
     margin-right: 2rem;
 }
 
@@ -110,7 +110,7 @@ header nav ul li a:hover {
 /* SEÇÃO PRINCIPAL (CARROSSEL HERO)*/
 /*---------------------------------*/
 #hero {
-    padding: 0; /* Removemos o padding para o carrossel ocupar toda a área */
+    padding: 0;
     height: 85vh; /* Altura do carrossel (85% da altura da tela) */
     width: 100%;
 }
@@ -136,19 +136,18 @@ header nav ul li a:hover {
     object-fit: cover; /* Faz a imagem cobrir todo o slide sem distorcer */
 }
 
-/* Estilizando as setas para ficarem mais visíveis e com a sua cor primária */
 .swiper-button-next, .swiper-button-prev {
-    color: var(--cor-primaria) !important; /* Usa a cor laranja que você definiu */
+    color: var(--cor-primaria) !important;
 }
 
 /*---------------------------------*/
-/* DEMAIS SEÇÕES                   */
+/*          DEMAIS SEÇÕES          */
 /*---------------------------------*/
 #sobre {
     background: var(--cor-fundo-secao);
 }
 
-/* CORREÇÃO: Garante que o título da seção 'Sobre' seja branco */
+/*Garante que o título da seção 'Sobre' seja branco */
 #sobre h2 {
     color: #FFFFFF;
 }
@@ -251,7 +250,7 @@ footer {
     }
     
     #hero {
-        height: 50vh;
+        height: 50vh; 
     }
 
     #hero .container {
@@ -279,7 +278,7 @@ footer {
 
 /* Estilo para a imagem da logo */
 .logo {
-    /* Ajuste a altura máxima da sua logo como preferir */
+    /* Ajuste a altura máxima da logo */
     max-height: 100px; 
     width: auto; /* Mantém a proporção da imagem */
 }
@@ -426,6 +425,39 @@ header.header-scrolled #searchIcon:hover {
 
 footer {
     color: #cccccc; /* O rodapé já tinha uma cor clara, mas isso garante */
-
 }
 
+/*--------------------------------------------------*/
+/*                BOTÃO DO CATÁLOGO                 */
+/*--------------------------------------------------*/
+
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 0 80px 6px;
+}
+
+.btn-detalhes {
+    background-color: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 4px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-detalhes:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
