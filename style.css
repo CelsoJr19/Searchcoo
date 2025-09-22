@@ -418,6 +418,18 @@ header.header-scrolled #searchIcon:hover {
     color: var(--cor-primaria); /* Mantém a cor de destaque laranja */
 }
 
+/* Muda a cor da BORDA INFERIOR da barra de pesquisa para branco */
+header.header-scrolled .search-input {
+    border-bottom-color: #FFFFFF;
+}
+
+/* Muda a cor do TEXTO DIGITADO e do PLACEHOLDER para branco */
+header.header-scrolled .search-input,
+header.header-scrolled .search-input::placeholder {
+    color: #FFFFFF;
+}
+
+
 /* Garante que o texto em seções de fundo escuro fique claro */
 #contato, #contato h2, #contato a {
     color: #FFFFFF;
@@ -460,4 +472,14 @@ footer {
 .btn-detalhes:hover {
     background-color: #000000;
     color: #ffffff;
+}
+
+/*----------------------------------------------*/
+/*      ESTILO DE DESTAQUE DA BUSCA            */
+/*----------------------------------------------*/
+
+.search-highlight {
+    background-color: #ffec80 !important; /* Destaque da pesquisa */
+    color: #000000 !important;           /* Garante que o texto fique preto */
+    transition: background-color 0.5s ease;
 }
