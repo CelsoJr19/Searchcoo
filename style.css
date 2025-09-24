@@ -237,7 +237,7 @@ footer {
 
 .footer-divider {
     border-top: 1px solid #444; /* Cor da linha (cinza escuro) */
-    margin: 2rem 0; /* Espaçamento acima e abaixo da linha */
+    margin: 0.5rem 0; /* Espaçamento acima e abaixo da linha */
 }
 
 .copyright-text {
@@ -492,4 +492,5 @@ footer {
     color: #000000 !important;           /* Garante que o texto fique preto */
     transition: background-color 0.5s ease;
 }
+
 
